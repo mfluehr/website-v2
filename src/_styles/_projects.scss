@@ -1,0 +1,361 @@
+//================
+// Projects
+//================
+
+
+.projects {
+  position: relative;
+  margin: 2em 0;
+}
+
+.projects-header-inner {
+  padding-bottom: 3em;
+
+  h2 {
+    margin: auto;
+    font: 700 2.1em $f-serif;
+
+    span {
+      padding: 0 .9rem;
+      background: $c-white;
+    }
+  }
+}
+
+
+//================
+// Project
+
+.project {
+  margin-bottom: 5em;
+}
+
+.project-overview {
+  @include center();
+  z-index: 20;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  filter: opacity(1);
+  transform: translate(0);
+  transition: .7s cubic-bezier(0.6, 0.0, 0.2, 1.6);
+  transition-property: filter, transform;
+
+  .project-thumb {
+    display: flex;
+    align-self: flex-start;
+    margin-bottom: 1em;
+
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 24em;
+      align-self: flex-start;
+      background: #ddd;
+      pointer-events: none;
+    }
+  }
+
+  .description {
+    max-width: 24em;
+  }
+    h3 {
+      width: 100%;
+      margin: 0 0 1.4em;
+      font: 700 1.2em $f-sans;
+      line-height: 1.3;
+    }
+
+    .intro {
+      font-style: italic;
+      font-weight: bold;
+    }
+
+    p {
+      margin: 0 0 1em 0;
+      color: $c-gray-500;
+      font-size: .9em;
+    }
+
+    .links {
+      display: flex;
+      margin-top: 1.25em;
+    }
+      .project-link {
+        display: inline-flex;
+        margin-right: 1em;
+        padding: .4em .7em;
+        background: $c-gray-500;
+        color: $c-white;
+        font-size: .85em;
+        text-decoration: none;
+        transition-duration: .3s;
+        transition-property: background-color, filter;
+
+        &:hover,
+        &:focus {
+          background: #000;
+          filter: drop-shadow(0 0 .7em invert($c-gray-500)) invert(1);
+        }
+
+        &::after {
+          width: 2.25em;
+          height: 100%;
+          background: right / contain no-repeat;
+          content: "";
+        }
+
+        &.i-image {
+          &::after {
+            background-image: url("../_images/i-image.svg");
+          }
+        }
+
+        &.i-mouse {
+          &::after {
+            background-image: url("../_images/i-mouse.svg");
+          }
+        }
+      }
+
+  &.hidden {
+    filter: opacity(0);
+    transform: translateX(-30%);
+  }
+}
+
+
+//================
+// Slides
+
+.slides {
+  display: none;
+  padding-top: 4rem;
+
+  &:target {
+    display: block;
+  }
+}
+
+.slides-inner {
+  position: relative;
+  padding-bottom: 1.1rem;
+  background: $c-gray-500;
+  color: $c-white;
+}
+
+.slides-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 -1.1rem 0 0;
+  padding: 0 1.1rem;
+  list-style: none;
+
+  &::before {
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 1.4em solid transparent;
+    border-right: 1.4em solid transparent;
+    border-bottom: 1.4em solid $c-gray-500;
+    content: "";
+    transform: translate(-50%);
+  }
+}
+
+
+//================
+// Slide
+
+.slide {
+  height: 10rem;
+  padding: 1.1rem 1.1rem 0 0;
+  transition: background-color .3s;
+}
+
+.slide-link {
+  display: block;
+  height: 100%;
+  line-height: 0;
+  transition-duration: .3s;
+  transition-property: box-shadow, filter;
+
+  img {
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .slide-current & {
+    box-shadow: 0 0 0 .4rem $c-gray-100;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 0 .4rem $c-white;
+    outline: none;
+  }
+}
+
+
+//================
+// Slide View
+
+.slide-view {
+  position: relative;
+  display: flex;
+  width: calc(100% + 1.5rem);
+  margin: 3rem 0 0 -1.1rem;
+  background: $c-gray-100;
+
+  &::before {
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 1.1em solid transparent;
+    border-right: 1.1em solid transparent;
+    border-bottom: 1.1em solid $c-gray-100;
+    content: "";
+    transform: translate(-50%);
+  }
+}
+
+.slide-view-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 2.1rem 1.5rem;
+
+  img {
+    width: 100%;
+    max-width: 48rem;
+    max-height: 35rem;
+  }
+
+  figcaption {
+    margin-top: .4em;
+    font-style: italic;
+  }
+}
+
+.view-content {
+  order: -1;
+}
+
+.view-button {
+  width: 3rem;
+  height: 3rem;
+  margin: 1rem 0 0;
+  background: center / 80% auto no-repeat;
+  border: 0;
+  border-radius: 0;
+  color: $c-white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition-duration: .3s;
+  transition-property: background-color;
+
+  &:hover,
+  &:focus {
+    background-color: $c-gray-500;
+  }
+
+  &-prev {
+    background-image: url("../_images/i-arrow-left.svg");
+  }
+
+  &-next {
+    background-image: url("../_images/i-arrow-right.svg");
+  }
+}
+
+
+//================
+// Breakpoints
+
+@media (min-width: 40rem) {
+  .project-overview {
+    h3 {
+      margin: 0 0 .3em;
+    }
+  }
+}
+
+@media (min-width: 50rem) {
+  .projects {
+    margin: -6em 0 12em;
+  }
+
+  .projects-header-inner {
+    $offsetX: 30vw;
+
+    width: 100vw + $offsetX;
+    padding-bottom: 10em;
+    background: linear-gradient(rgba(255,255,255,0) 2.2em, $c-tan-300 2.3em,
+        $c-tan-300 2.4em, rgba(255,255,255,0) 2.5em);
+    transform: translateX(-$offsetX / 2) rotate(-12deg);
+
+    h2 {
+      max-width: 40rem;
+      font-size: 2.7em;
+
+      span {
+        padding: 0 .5em;
+      }
+    }
+  }
+
+  .project-overview {
+    .project-thumb {
+      margin-right: 2em;
+    }
+      img {
+        width: 26em;
+        max-width: none;
+      }
+  }
+
+  .view-content {
+    order: 0;
+  }
+
+  .view-button {
+    width: 3rem;
+    height: 3rem;
+
+    &-prev {
+      margin-right: 2rem;
+    }
+
+    &-next {
+      margin-left: 2rem;
+    }
+  }
+}
+
+@media (min-width: 70rem) {
+  .projects-header-inner {
+    padding-bottom: 13em;
+
+    h2 {
+      max-width: 60rem;
+    }
+  }
+
+  .project {
+    margin-bottom: 10em;
+  }
+
+  .slide {
+    height: 14rem;
+  }
+}

@@ -1,0 +1,76 @@
+//================
+// Main
+//================
+
+
+//================
+// Variables
+
+$c-gray-100: #12110f;
+$c-gray-500: #534c43;
+$c-gray-900: #b0afad;
+$c-tan-500: #ab7044;
+$c-tan-300: #4d4131;
+$c-tan-900: #fee7c8;
+$c-white: #fff;
+
+$f-sans: "Open Sans", sans-serif;
+$f-serif: "Tinos", serif;
+
+
+//================
+// Mixins
+
+@mixin center($maxWidth: 90rem) {
+  max-width: $maxWidth;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @media (min-width: 40rem) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+
+//================
+// Imports
+
+@import
+  "reset",
+  "body-overlay",
+  "header",
+  "projects",
+  "social";
+
+
+//================
+// General elements
+
+html {
+  min-width: 20rem;
+  line-height: 1.4;
+}
+
+body {
+  min-width: 20rem;
+  min-height: 100vh;
+  color: $c-tan-300;
+  font: 1.3rem $f-sans;
+  scroll-behavior: smooth;
+
+  @media (min-width: 70rem) {
+    background:
+        bottom right / auto 100% no-repeat fixed
+        url("../_images/body-bg.svg") $c-white;
+  }
+}
+
+main {
+  position: relative;
+  width: 100%;
+  margin-top: -90rem;
+  padding-top: 60rem;
+  overflow: hidden;
+}

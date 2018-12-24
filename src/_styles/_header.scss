@@ -1,0 +1,97 @@
+//================
+// Body Header
+//================
+
+
+.body-header {
+  width: 100%;
+  overflow: hidden;
+}
+
+.body-header-inner {
+  margin-bottom: 30rem;
+  padding: 1em .7em 13rem;
+  background:
+      linear-gradient(to top, $c-white, mix($c-white, $c-tan-300, 8%) 2.6em,
+          $c-tan-300 2.7em, $c-tan-300 3em, rgba(255,255,255,0) 3em),
+      url("../_images/paper.jpg") $c-tan-900;
+  color: $c-gray-500;
+
+  h1 {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.3;
+
+    b {
+      display: block;
+      margin-bottom: .15em;
+      font: 700 $f-sans;
+      font-size: calc(1.1em + 7vw);
+    }
+
+    small {
+      display: inline-block;
+      font-size: 1.1em;
+      font-style: italic;
+      transform: translateX(3.5em) rotate(90deg);
+      transform-origin: left top;
+    }
+  }
+}
+
+@media (min-width: 35rem) {
+  .body-header-inner {
+    h1 {
+      b {
+        font-family: $f-serif;
+        font-size: 4.3em;
+      }
+
+      small {
+        transform: translateX(5em) rotate(90deg);
+      }
+    }
+  }
+}
+
+@media (min-width: 50rem) {
+  .body-header-inner {
+    $offsetX: 35vw;
+    $offsetY: 14em;
+
+    width: 100vw + $offsetX;
+    padding: $offsetY 0 18em;
+    background:
+        linear-gradient(to top, $c-white, mix($c-white, $c-tan-300, 8%) 6.6em,
+            $c-tan-300 6.7em, $c-tan-300 6.9em, rgba($c-tan-500, .4) 7em, rgba(255,255,255,0) 13em),
+        url("../_images/paper.jpg") $c-tan-900;
+    mix-blend-mode: darken;
+    transform: translate(-$offsetX / 2, -10em) rotate(-12deg);
+    transform-origin: center $offsetY;
+
+    h1 {
+      font-size: 1.35em;
+      transform: translateX(20vw);
+
+      small {
+        transform: translateX(5em) rotate(90deg);
+      }
+    }
+  }
+}
+
+@media (min-width: 70rem) {
+  .body-header {
+    background: linear-gradient($c-white 70%, rgba(255,255,255,0));
+  }
+
+  .body-header-inner {
+    h1 {
+      transform: translateX(calc(50% - 21em));
+
+      small {
+        transform: translateX(7.4em) rotate(90deg);
+      }
+    }
+  }
+}

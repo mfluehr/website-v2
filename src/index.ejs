@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- <meta name="description" content="The website of Mark Fluehr" /> -->
+  <title>Mark Fluehr</title>
+
+  <link href="_styles/main.css" rel="stylesheet" />
+  <link href="_images/favicon.png" rel="icon" />
+
+  <link href="https://fonts.googleapis.com/css?family=Tinos:700" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet" />
+
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <%- include _includes/body-overlay %>
+
+  <header class="body-header">
+    <div class="body-header-inner">
+      <h1>
+        <b>Mark Fluehr</b>
+        <small>Web Designer<br />Web Developer</small>
+      </h1>
+    </div>
+  </header>
+
+  <main>
+    <%- include _includes/projects %>
+    <%- include _includes/social %>
+  </main>
+</body>
+
+
+</html>

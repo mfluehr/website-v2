@@ -1,0 +1,39 @@
+<div id="body-overlay">
+  <div id="body-overlay-inner">
+    <svg id="body-overlay-content" width="1500"
+        height="1077" viewBox="0 0 1500 1077">
+      <defs>
+        <mask maskUnits="userSpaceOnUse" id="chameleon-mask">
+          <image xlink:href="_images/chameleon-mask.jpg"
+             width="854" height="845" x="0" y="0" />
+        </mask>
+        <mask maskUnits="userSpaceOnUse" id="branch-mask">
+          <image xlink:href="_images/branch-mask.jpg"
+             width="1365" height="862" x="135" y="215" />
+        </mask>
+      </defs>
+
+      <image xlink:href="_images/branch.jpg"
+         mask="url(#branch-mask)" width="1365" height="862"
+         id="branch" x="135" y="215" />
+
+      <g id="chameleon">
+        <image xlink:href="_images/chameleon.jpg"
+           mask="url(#chameleon-mask)" width="854" height="845"
+           id="body" x="0" y="0" />
+        <image xlink:href="_images/eye-1.jpg"
+           width="61" height="59"
+           class="eye" id="eye-1" x="74" y="146" />
+        <image xlink:href="_images/eye-2.jpg"
+           width="61" height="59"
+           class="eye" id="eye-2" x="74" y="146" />
+        <image xlink:href="_images/eye-3.jpg"
+           width="61" height="59"
+           class="eye" id="eye-3" x="74" y="146" />
+        <image xlink:href="_images/eye-4.jpg"
+           width="61" height="59"
+           class="eye" id="eye-4" x="74" y="146" />
+       </g>
+    </svg>
+  </div>
+</div>

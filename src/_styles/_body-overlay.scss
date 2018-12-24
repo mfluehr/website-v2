@@ -1,0 +1,43 @@
+#body-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100rem;
+  overflow: hidden;
+}
+
+#body-overlay-inner {
+  position: relative;
+  z-index: 10;
+  left: 5.5em;
+  top: 5em;
+  width: calc(10% + 24em);
+  pointer-events: none;
+
+  #body-overlay-content {
+    width: 100%;
+    height: 100%;
+  }
+
+    .eye {
+      opacity: 0;
+    }
+
+  @media (min-width: 35rem) {
+    left: 9em;
+    top: 7em;
+    width: calc(50% + 15em);
+  }
+
+  @media (min-width: 50rem) {
+    left: 34%;
+    top: 11em;
+    width: 105%;
+  }
+
+  @media (min-width: 70rem) {
+    left: calc(50% - 10em);
+    width: 61em;
+  }
+}

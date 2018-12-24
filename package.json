@@ -1,0 +1,31 @@
+{
+  "name": "markfluehr.com",
+  "version": "2.0.0",
+  "description": "Website of Mark Fluehr",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "Mark Fluehr",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "compile-ejs-loader": "0.0.1",
+    "ejs": "^2.6.1",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.4.0",
+    "node-sass": "^4.9.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^7.1.0",
+    "uglify-js": "^3.4.9",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  }
+}
