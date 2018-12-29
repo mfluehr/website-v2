@@ -1,4 +1,6 @@
 function init() {
+  const projects = document.getElementsByClassName("project-overview");
+
   [...projects].forEach((project, i) => {
     if (project.getBoundingClientRect().top > window.innerHeight) {
       project.classList.add("hidden");
@@ -17,15 +19,15 @@ function observe(entries) {
 }
 
 
+let intersectionObserver;
+
 try {
-  const intersectionObserver = new IntersectionObserver(observe, {
+  intersectionObserver = new IntersectionObserver(observe, {
     threshold: .3
   });
-
-  const projects = document.getElementsByClassName("project");
 
   window.addEventListener("load", (e) => init(), { once: true });
 }
 catch (err) {
-  console.warn("Intersection observer failed");
+  console.warn("Image intersection observer failed");
 }

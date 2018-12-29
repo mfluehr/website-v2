@@ -92,8 +92,11 @@
         transition-duration: .3s;
         transition-property: background-color, filter;
 
-        &:hover,
         &:focus {
+          outline: 2px dotted $c-gray-100;
+        }
+
+        &:hover {
           background: #000;
           filter: drop-shadow(0 0 .7em invert($c-gray-500)) invert(1);
         }
@@ -172,7 +175,7 @@
 // Slide
 
 .slide {
-  height: 10rem;
+  height: 6.8rem;
   padding: 1.1rem 1.1rem 0 0;
   transition: background-color .3s;
 }
@@ -187,14 +190,22 @@
   img {
     height: 100%;
     pointer-events: none;
+    transition: inherit;
   }
 
   .slide-current & {
     box-shadow: 0 0 0 .4rem $c-gray-100;
+
+    img {
+      filter: grayscale(1) contrast(.6);
+    }
   }
 
-  &:hover,
   &:focus {
+    outline: 2px dotted $c-white;
+  }
+
+  &:hover {
     box-shadow: 0 0 0 .4rem $c-white;
     outline: none;
   }
@@ -204,7 +215,7 @@
 //================
 // Slide View
 
-.slide-view {
+.view {
   position: relative;
   display: flex;
   width: calc(100% + 1.5rem);
@@ -226,19 +237,22 @@
   }
 }
 
-.slide-view-inner {
+.view-inner {
   position: relative;
   display: flex;
+  width: 100%;
+  max-width: 70rem;
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 2.1rem 1.5rem;
+  padding: 3rem 1.5rem;
 
   img {
+    $ratio: 768 / 1024;
+
     width: 100%;
-    max-width: 48rem;
-    max-height: 35rem;
+    max-height: 36rem;
   }
 
   figcaption {
@@ -254,8 +268,8 @@
 .view-button {
   width: 3rem;
   height: 3rem;
-  margin: 1rem 0 0;
-  background: center / 80% auto no-repeat;
+  margin: .5rem 0;
+  background: center / 2.4rem auto no-repeat;
   border: 0;
   border-radius: 0;
   color: $c-white;
@@ -264,17 +278,32 @@
   transition-duration: .3s;
   transition-property: background-color;
 
-  &:hover,
   &:focus {
+    outline: 2px dotted $c-white;
+  }
+
+  &:hover {
     background-color: $c-gray-500;
   }
 
   &-prev {
     background-image: url("../_images/i-arrow-left.svg");
+    transform: translateX(-.3rem);
   }
 
   &-next {
     background-image: url("../_images/i-arrow-right.svg");
+    transform: translateX(.3rem);
+  }
+
+  &-close {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+    background: center / 1.4rem auto no-repeat url("../_images/i-ex.svg");
   }
 }
 
@@ -324,21 +353,12 @@
       }
   }
 
-  .view-content {
-    order: 0;
+  .view-inner {
+    flex-wrap: nowrap;
   }
 
-  .view-button {
-    width: 3rem;
-    height: 3rem;
-
-    &-prev {
-      margin-right: 2rem;
-    }
-
-    &-next {
-      margin-left: 2rem;
-    }
+  .view-content {
+    order: 0;
   }
 }
 
@@ -356,6 +376,6 @@
   }
 
   .slide {
-    height: 14rem;
+    height: 9rem;
   }
 }

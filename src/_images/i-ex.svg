@@ -15,7 +15,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="i-arrow-right.svg">
+   sodipodi:docname="i-ex.svg">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4142136"
-     inkscape:cx="153.88404"
-     inkscape:cy="157.42099"
+     inkscape:cx="119.65529"
+     inkscape:cy="128.77763"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -76,10 +76,9 @@
      id="layer1"
      transform="translate(0,-237.46874)">
     <path
-       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.29696655;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 37.703125,245.93541 21.298958,21.29895 -21.298958,21.29896 V 275.03958 H 0.52916666 V 259.42915 H 37.703125 Z"
-       id="rect834"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccc" />
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:45;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="M 38.326172 6.5039062 L 6.5039062 38.326172 L 80.677734 112.5 L 6.5039062 186.67383 L 38.326172 218.49609 L 112.5 144.32227 L 186.67383 218.49609 L 218.49609 186.67383 L 144.32227 112.5 L 218.49609 38.326172 L 186.67383 6.5039062 L 112.5 80.677734 L 38.326172 6.5039062 z "
+       transform="matrix(0.26458333,0,0,0.26458333,0,237.46874)"
+       id="path814" />
   </g>
 </svg>

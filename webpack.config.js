@@ -11,13 +11,6 @@ const ejsOptions = {
   }
 };
 
-//// const projectPlugins = projects.map((project) => new HtmlWebpackPlugin({
-//   ...ejsOptions,
-//   filename: `./projects/${project.folder}/index.html`,
-//   template: `./projects/${project.folder}/index.ejs`,
-//   project
-// }));
-
 
 module.exports = {
   context: path.resolve(__dirname, "src"),

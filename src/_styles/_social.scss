@@ -58,8 +58,11 @@
     transition-duration: .3s;
     transition-property: background-color, color, filter;
 
-    &:hover,
     &:focus {
+      outline: 2px dotted $c-gray-100;
+    }
+
+    &:hover {
       background: #000;
       filter: drop-shadow(0 0 .7em invert($c-tan-500)) invert(.9);
     }

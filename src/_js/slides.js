@@ -1,6 +1,4 @@
-function changeSlide(e) {
-  e.preventDefault();
-
+function changeSlide(delta) {
   const container = prevSlide.parentElement;
   const slides = container.querySelectorAll(".slide");
   let prevIndex = -1;
@@ -13,7 +11,7 @@ function changeSlide(e) {
     }
   }
 
-  newIndex = prevIndex + Number(e.target.dataset.change);
+  newIndex = prevIndex + Number(delta);
 
   if (newIndex < 0) {
     newIndex = slides.length - 1;
@@ -25,14 +23,32 @@ function changeSlide(e) {
   viewSlide(slides[newIndex], true);
 }
 
-function toggleSlide(e) {
-  if (e.which != 1 && e.key != "Enter") return;
+function closeSlide(e) {
+  view.remove();
+}
 
-  const slide = e.target.parentElement;
+function handleChangeButton(e) {
+  e.preventDefault();
+  changeSlide(e.target.dataset.delta);
+}
 
-  if (slide && slide.classList.contains("slide")) {
-    e.preventDefault();
-    viewSlide(slide);
+function handleInput(e) {
+  const el = e.target;
+
+  if (e.which === 1 || e.key === "Enter") {
+    if (el && el.classList.contains("slide-link")) {
+      e.preventDefault();
+      viewSlide(el.parentElement);
+    }
+    else if (el && el.classList.contains("slides-link")) {
+      viewSlide(el.closest(".project").querySelector(".slide"));
+    }
+  }
+  else if (e.key === "ArrowLeft") {
+    changeSlide(-1);
+  }
+  else if (e.key === "ArrowRight") {
+    changeSlide(1);
   }
 }
 
@@ -55,6 +71,7 @@ function viewSlide(slide, inPlace = false) {
   img.alt = "";
   caption.textContent = slide.querySelector("img").alt;
   slide.classList.add("slide-current");
+  slide.querySelector("a").focus();
 
   if (!inPlace) {
     container.insertBefore(view, lastOnLine.nextSibling);
@@ -63,26 +80,29 @@ function viewSlide(slide, inPlace = false) {
 
 
 const html = `
-<figure class="slide-view-inner">
-  <button class="view-button view-button-prev i-arrow-left" type="button" data-change="-1" aria-label="Previous image"></button>
+<figure class="view-inner" id="view">
+  <button class="view-button view-button-prev i-arrow-left" type="button" data-delta="-1" aria-label="Previous image"></button>
   <div class="view-content">
     <img>
     <figcaption></figcaption>
   </div>
-  <button class="view-button view-button-next i-arrow-right" type="button" data-change="1" aria-label="Next image"></button>
+  <button class="view-button view-button-next i-arrow-right" type="button" data-delta="1" aria-label="Next image"></button>
 </figure>
+<button class="view-button view-button-close i-ex" type="button" aria-label="Close image"></button>
 `;
 
 const view = document.createElement("li");
-view.className = "slide-view";
+view.className = "view";
 view.innerHTML = html;
 const img = view.querySelector("img");
 const caption = view.querySelector("figcaption");
 const prevButton = view.querySelector(".view-button-prev");
 const nextButton = view.querySelector(".view-button-next");
+const closeButton = view.querySelector(".view-button-close");
 let prevSlide;
 
-document.addEventListener("keydown", (e) => toggleSlide(e));
-document.addEventListener("click", (e) => toggleSlide(e));
-prevButton.addEventListener("click", changeSlide);
-nextButton.addEventListener("click", changeSlide);
+document.addEventListener("keydown", (e) => handleInput(e));
+document.addEventListener("click", (e) => handleInput(e));
+prevButton.addEventListener("click", handleChangeButton);
+nextButton.addEventListener("click", handleChangeButton);
+closeButton.addEventListener("click", closeSlide);

@@ -17,4 +17,4 @@ const chameleon = document.querySelector("#chameleon"),
       eyes = document.querySelectorAll(".eye"),
       varieties = 9;
 
-setTimeout(look, 5000);
+setTimeout(look, 3000);
