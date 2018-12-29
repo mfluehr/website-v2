@@ -20,7 +20,7 @@ function changeSlide(delta) {
     newIndex = 0;
   }
 
-  viewSlide(slides[newIndex], true);
+  return viewSlide(slides[newIndex], true);
 }
 
 function closeSlide(e) {
@@ -45,10 +45,12 @@ function handleInput(e) {
     }
   }
   else if (e.key === "ArrowLeft") {
-    changeSlide(-1);
+    const slide = changeSlide(-1);
+    slide.querySelector("a").focus();
   }
   else if (e.key === "ArrowRight") {
-    changeSlide(1);
+    const slide = changeSlide(1);
+    slide.querySelector("a").focus();
   }
 }
 
@@ -71,11 +73,13 @@ function viewSlide(slide, inPlace = false) {
   img.alt = "";
   caption.textContent = slide.querySelector("img").alt;
   slide.classList.add("slide-current");
-  slide.querySelector("a").focus();
 
   if (!inPlace) {
     container.insertBefore(view, lastOnLine.nextSibling);
+    //// img.scrollIntoView(container);
   }
+
+  return slide;
 }
 
 
